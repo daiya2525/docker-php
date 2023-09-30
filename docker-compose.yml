@@ -1,0 +1,39 @@
+version: '3'
+services:
+
+  #MySQL用コンテナ
+  mysql:
+    container_name: php_test_mysql
+    image: mysql:8.0
+    volumes:
+      - ./mysql:/var/lib/mysq
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=php_test
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=password
+
+  #phpMyAdmin用コンテナ
+  phpmyadmin:
+    container_name: phpMyAdmin
+    depends_on:
+      - mysql
+    image: phpmyadmin/phpmyadmin
+    environment:
+      PMA_HOST: mysql
+    restart: always
+    ports:
+      - "8000:80"
+
+  #php用コンテナ
+  php:
+    container_name: php-apache
+    build: ./php
+    volumes:
+      - ./html:/var/www/html
+    ports:
+      - 8080:80
+    depends_on:
+      - mysql
