@@ -1,6 +1,9 @@
 # docker-php
 I built an environment with php8.1-apache, mysql8.0, and phpmyadmin using docker.
 
+
+
+
 ### ディレクトリ・ファイル構造について
 
 ```bash
@@ -12,6 +15,7 @@ docker-php/
 └── html/
     └── (PHPアプリケーションのファイル「index.php」など)
 ```
+
 
 ### Docker起動方法
 ターミナルから、docker-phpフォルダに移動
@@ -28,6 +32,8 @@ $ docker-compose up -d
 ```bash
 $ docker ps
 ```
+
+
 
 ### 動作確認
 http://localhost:8080
