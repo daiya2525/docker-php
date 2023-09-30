@@ -6,7 +6,7 @@ services:
     container_name: php_test_mysql
     image: mysql:8.0
     volumes:
-      - ./mysql:/var/lib/mysq
+      - ./mysql:/var/lib/mysql
     ports:
       - 3306:3306
     environment:
