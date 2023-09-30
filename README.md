@@ -2,13 +2,16 @@
 I built an environment with php8.1-apache, mysql8.0, and phpmyadmin using docker.
 
 ### ディレクトリ・ファイル構造について
-docker-php/<br/>
-├── docker-compose.yml<br/>
-├── mysql/<br/>
-├── php/<br/>
-│   └── (PHP関連の設定ファイル「php.ini」や「Dockerfile」など)<br/>
-└── html/<br/>
-    └── (PHPアプリケーションのファイル「index.php」など)<br/>
+
+```bash
+docker-php/
+├── docker-compose.yml
+├── mysql/
+├── php/
+│   └── (PHP関連の設定ファイル「php.ini」や「Dockerfile」など)
+└── html/
+    └── (PHPアプリケーションのファイル「index.php」など)
+```
 
 ### Docker起動方法
 ターミナルから、docker-phpフォルダに移動
